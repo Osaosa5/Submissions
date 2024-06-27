@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\Main">
+      <UniqueIdentifier>{77192ba2-32bd-48bc-b54e-3cf026d8e06d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Main">
+      <UniqueIdentifier>{4338df64-4af6-476c-9d96-64f8890f0dc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene">
+      <UniqueIdentifier>{b6c5ec2a-7d99-43e4-b39c-043d3ec9d75c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Base">
+      <UniqueIdentifier>{08a9dc05-a1cc-4d74-820c-336ca3868a12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene\Other">
+      <UniqueIdentifier>{03d6fb4d-8f9b-4019-8d4d-3c71a906b941}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Tool">
+      <UniqueIdentifier>{ab9db09b-af1e-4626-a26e-d52bc2c15fc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Tool">
+      <UniqueIdentifier>{13c9fa82-042f-44ce-bc0a-9d180336190e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\UI">
+      <UniqueIdentifier>{06b619f1-2380-4aa9-bfbb-c0d0837bab2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\UI">
+      <UniqueIdentifier>{002fe204-be4d-4b75-9b66-0082b095a58f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Animation">
+      <UniqueIdentifier>{027fbc91-b3f9-4c9a-afca-59ee1a17b55a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Animation">
+      <UniqueIdentifier>{de6c1ff2-4bd1-4e68-94a9-c3553efa5f8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Action">
+      <UniqueIdentifier>{96ab1ebf-b9ea-48cb-9dd9-fda805d2b29d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Action\Data">
+      <UniqueIdentifier>{ac835935-cb92-41bf-af85-8429354bc2ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Action\Function">
+      <UniqueIdentifier>{bff339d7-d5cc-4b9c-bd77-954876bd6628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Action">
+      <UniqueIdentifier>{f1dd97b9-a8a6-4e2f-b276-80696f15f6bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Action\Data">
+      <UniqueIdentifier>{788c6359-4105-496f-a3ee-c12bc0b3d752}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Action\Function">
+      <UniqueIdentifier>{7800c46d-d59b-414c-b378-1041697d3786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{e66ae985-b56c-4a74-9dc8-29073f40cd44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Base">
+      <UniqueIdentifier>{908ac04b-3296-4cfe-92ad-0ff02a230aba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Other">
+      <UniqueIdentifier>{9d5b7a30-5a3a-41ef-8864-db7b9910bba7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sourse\GameMain.cpp">
+      <Filter>ソース ファイル\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\WinMain.cpp">
+      <Filter>ソース ファイル\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\SceneBase.cpp">
+      <Filter>ソース ファイル\Scene\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\SceneGameEnding.cpp">
+      <Filter>ソース ファイル\Scene\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\SceneGameOver.cpp">
+      <Filter>ソース ファイル\Scene\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\SceneGameTitle.cpp">
+      <Filter>ソース ファイル\Scene\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\mymath.cpp">
+      <Filter>ソース ファイル\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\uilife.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\framedata.cpp">
+      <Filter>ソース ファイル\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\motiondata.cpp">
+      <Filter>ソース ファイル\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\SceneGameResult.cpp">
+      <Filter>ソース ファイル\Scene\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\Lane.cpp">
+      <Filter>ソース ファイル\Action\Function</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\Item.cpp">
+      <Filter>ソース ファイル\Action\Function</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\Player.cpp">
+      <Filter>ソース ファイル\Action\Function</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\mapdata.cpp">
+      <Filter>ソース ファイル\Action\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\HitTest.cpp">
+      <Filter>ソース ファイル\Action\Function</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\TimeFunction.cpp">
+      <Filter>ソース ファイル\Action\Function</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\fps.cpp">
+      <Filter>ソース ファイル\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\Animation.cpp">
+      <Filter>ソース ファイル\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\uispeedometer.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\Effect.cpp">
+      <Filter>ソース ファイル\Action\Function</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\Fade.cpp">
+      <Filter>ソース ファイル\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\Shadow.cpp">
+      <Filter>ソース ファイル\Action\Function</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\Pause.cpp">
+      <Filter>ソース ファイル\Action\Function</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\uiMileStone.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\save.cpp">
+      <Filter>ソース ファイル\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\SceneAction.cpp">
+      <Filter>ソース ファイル\Scene\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\ItemData.cpp">
+      <Filter>ソース ファイル\Action\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="sourse\Screen.cpp">
+      <Filter>ソース ファイル\Action\Function</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\base.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\star.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\wall.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\dot.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\box.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\box2.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\title.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\tower.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\gameover.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\Bullet_player.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\MapChip\MapChip.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\UI\battery.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\UI\item_battery.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\UI\item_heart.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\UI\item_jet.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\UI\stageitem3_jet.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\UI\stageitem1_jet.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\UI\number_ui_sheet.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\cgBg\result2.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\motion\player_right2.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\UI\speedmeter.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\UI\speedometer.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\MapChip\MapChipNew.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\UI\3cnt_sheet.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\UI\text-04.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\UI\ui_rank_s.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sourse\GameMain.h">
+      <Filter>ヘッダー ファイル\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\WinMain.h">
+      <Filter>ヘッダー ファイル\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\SceneBase.h">
+      <Filter>ヘッダー ファイル\Scene\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\SceneGameEnding.h">
+      <Filter>ヘッダー ファイル\Scene\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\SceneGameOver.h">
+      <Filter>ヘッダー ファイル\Scene\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\SceneGameTitle.h">
+      <Filter>ヘッダー ファイル\Scene\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\mymath.h">
+      <Filter>ヘッダー ファイル\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\uilife.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\framedata.h">
+      <Filter>ヘッダー ファイル\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\motiondata.h">
+      <Filter>ヘッダー ファイル\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\SceneGameResult.h">
+      <Filter>ヘッダー ファイル\Scene\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\fps.h">
+      <Filter>ヘッダー ファイル\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\uispeedometer.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\Fade.h">
+      <Filter>ヘッダー ファイル\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\ItemData.h">
+      <Filter>ヘッダー ファイル\Action\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\mapdata.h">
+      <Filter>ヘッダー ファイル\Action\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\Effect.h">
+      <Filter>ヘッダー ファイル\Action\Function</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\Shadow.h">
+      <Filter>ヘッダー ファイル\Action\Function</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\uiMileStone.h">
+      <Filter>ヘッダー ファイル\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\save.h">
+      <Filter>ヘッダー ファイル\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="sourse\SceneAction.h">
+      <Filter>ヘッダー ファイル\Scene\Other</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="res\staging\animation.mp4">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+  </ItemGroup>
+</Project>
