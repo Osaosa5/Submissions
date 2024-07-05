@@ -131,8 +131,18 @@ SceneAction::SceneAction(int stageNumber) {
 */
 SceneAction::~SceneAction() {
 	// グラフィックをメモリ上から削除する
-	// 背景
 	DeleteGraph(_cgBg);
+	DeleteGraph(_cgOperationDescription);
+	DeleteGraph(_cgStart);
+	DeleteGraph(_cgLimitTimeBox);
+	DeleteGraph(_cgFade);
+	DeleteGraph(_cgRetry);
+
+	// ポーズ画面の選択肢
+	for (int i = 0; i < _COLLOR_ALL_; i++) {
+		DeleteGraph(_cgYes[i]);
+		DeleteGraph(_cgNo[i]);
+	}			   
 
 	// アイテム
 	for(int i = 0; i < _ITEM_ALL_; i++) {
@@ -153,6 +163,10 @@ SceneAction::~SceneAction() {
 		if(_cgNumber[i] != -1) {
 			DeleteGraph(_cgNumber[i]);
 		}
+	}
+	// 3カウント
+	for (int i = 0; i < 3; i++) {
+		DeleteGraph(_cgCntNumber[i]);
 	}
 
 	// メモリに読みこんだ音データを削除する
@@ -181,6 +195,16 @@ SceneAction::~SceneAction() {
 	ef_healing->~Effect();
 	ef_firespark->~Effect();
 	ef_frustration->~Effect();
+
+	delete _mapData;
+	delete _fps;
+	delete _UIspeedoMeter;
+	delete _shadow;
+	delete _UImileStone;
+	delete ef_barrier;
+	delete ef_healing;
+	delete ef_firespark;
+	delete ef_frustration;
 }
 
 /*
