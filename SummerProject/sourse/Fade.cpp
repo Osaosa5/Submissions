@@ -18,18 +18,17 @@ Fade::Fade()
     // カラーマスク用
     gColorMaskR = 0, gColorMaskG = 0, gColorMaskB = 0, gColorMaskA = 0;
     // フェードインアウト用
-    gColorFadeStR = 0;
-    gColorFadeStG = 0; 
-    gColorFadeStB = 0;
-    gColorFadeStA = 0;
-    gColorFadeEdR = 0;
-    gColorFadeEdG = 0;
-    gColorFadeEdB = 0;
-    gColorFadeEdA = 0;
-    gFadeFrames = 0;
-    gFadeCnt = 0;
-
-    _step = 0;
+    gColorFadeStR   = 0;
+    gColorFadeStG   = 0; 
+    gColorFadeStB   = 0;
+    gColorFadeStA   = 0;
+    gColorFadeEdR   = 0;
+    gColorFadeEdG   = 0;
+    gColorFadeEdB   = 0;
+    gColorFadeEdA   = 0;
+    gFadeFrames     = 0;
+    gFadeCnt        = 0;
+    _step           = 0;
 }
 
 /*
@@ -76,7 +75,7 @@ void Fade::ColorFadeOut(float colorR, float colorG, float colorB, float frames)
     gColorFadeEdA = 255;
     // フェードカウンタ
     gFadeFrames = frames;
-    gFadeCnt = 0;
+    gFadeCnt    = 0;
 }
 
 /*
@@ -99,7 +98,7 @@ void Fade::ColorFadeIn(float frames)
         gColorFadeEdA = 0;
         // フェードカウンタ
         gFadeFrames = frames;
-        gFadeCnt = 0;
+        gFadeCnt    = 0;
     }
 }
 

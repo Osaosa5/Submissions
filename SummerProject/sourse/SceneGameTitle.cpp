@@ -40,6 +40,7 @@ SceneGameTitle::~SceneGameTitle() {
 	DeleteGraph(_cgSchool);
 	DeleteGraph(_cgLogo);
 	DeleteGraph(_cgBg);
+	DeleteGraph(_cgStart);
 	DeleteSoundMem(bgm_title);
 }
 

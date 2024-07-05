@@ -14,8 +14,8 @@ UISpeedoMeter::UISpeedoMeter() {
 	// ‰æ‘œ“Ç‚İ‚İ
 	LoadDivGraph("res/UI/speedometer.png", 7, 7, 1, 200, 200, &_cgSpeedMeter[0]);
 	// •Ï”‰Šú‰»
-	_speed = 0;
-	_drawSpeed = 0;
+	_speed		= 0;
+	_drawSpeed	= 0;
 }
 
 /*

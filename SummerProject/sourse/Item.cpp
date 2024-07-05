@@ -14,21 +14,21 @@
 void SceneAction::InitItem() {
 	for(int i = 0; i < ITEM_MAX; i++) 
 	{
-		_gItem[i].use = 1;
-		_gItem[i].x = itemData[i].x;
-		_gItem[i].y = itemData[i].y;
-		_gItem[i].w = ITEM_WIDTH;
-		_gItem[i].h = ITEM_HEIGHT;
-		_gItem[i].lane = AddObjectLane(_gItem[i].y);
-		_gItem[i].high = 20;
-		_gItem[i].type = itemData[i].type;
+		_gItem[i].use	= 1;
+		_gItem[i].x		= itemData[i].x;
+		_gItem[i].y		= itemData[i].y;
+		_gItem[i].w		= ITEM_WIDTH;
+		_gItem[i].h		= ITEM_HEIGHT;
+		_gItem[i].lane	= AddObjectLane(_gItem[i].y);
+		_gItem[i].high	= 20;
+		_gItem[i].type	= itemData[i].type;
 		_gItem[i].stand = itemData[i].stand;
 	}
 
 	// フラグの初期化
-	shouldGotBattery = 0;
-	shouldGotHeart = 0;
-	shouldGotJet = 0;
+	shouldGotBattery	= 0;
+	shouldGotHeart		= 0;
+	shouldGotJet		= 0;
 	// カウントの初期化
 	batteryEffectStartTime = 0;
 	// スピードアップ,ダウン文字表示の初期化
@@ -129,9 +129,9 @@ void SceneAction::DrawItem()
 			int yy = _gItem[i].y * CHIP_H;
 			_shadow->DrawItem(x, yy);
 			// typeによって描画するアイテムを変える
-			if(_gItem[i].type == BATTERY) DrawGraph(x, y, _cgItem[ITEM_BATTERY], TRUE);
-			if(_gItem[i].type == HEART) DrawGraph(x, y, _cgItem[ITEM_HEART], TRUE);
-			if(_gItem[i].type == JET) DrawGraph(x, y, _cgItem[ITEM_JET], TRUE);
+			if(_gItem[i].type == BATTERY)	DrawGraph(x, y, _cgItem[ITEM_BATTERY], TRUE);
+			if(_gItem[i].type == HEART)		DrawGraph(x, y, _cgItem[ITEM_HEART], TRUE);
+			if(_gItem[i].type == JET)		DrawGraph(x, y, _cgItem[ITEM_JET], TRUE);
 		}
 	}
 

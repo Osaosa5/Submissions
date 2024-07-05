@@ -14,12 +14,12 @@
 */
 SceneGameEnding::SceneGameEnding() {
 	// ‰æ‘œ“Ç‚İ‚İ
-	_cgBg = LoadGraph("res/cgBg/ending.png");
+	_cgBg		= LoadGraph("res/cgBg/ending.png");
 	// ‰¹Šy“Ç‚İ‚İ
-	bgm_ending = LoadSoundMem("res/sound/Anxious.mp3");
+	bgm_ending	= LoadSoundMem("res/sound/Anxious.mp3");
 
 	// ƒtƒ‰ƒO‰Šú‰»
-	ed = FALSE;
+	ed	= FALSE;
 	end = FALSE;
 }
 

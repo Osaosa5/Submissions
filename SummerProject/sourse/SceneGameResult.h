@@ -12,22 +12,28 @@ public:
 	void	Draw() override;	// 描画
 
 protected:
+	// マクロ
+#define _CG_RESULT_ALL_ 4		// ランク画像の数
+#define _CG_OPTION_COLOR_NUM_ 2	// 選択肢の色の数
+
+#define _SE_RESULT_NUM_		  2	// リザルトシーンで使用するSEの数
+
 	// 画像ハンドル
-	int _cgBg;			// 背景画像
-	int _cgResult[4];	// ランク画像
-	int _cgRanking;		// ランキング枠
-	int _cgFade;		// 薄く暗く
+	int _cgBg;						// 背景画像
+	int _cgResult[_CG_RESULT_ALL_];	// ランク画像
+	int _cgRanking;					// ランキング枠
+	int _cgFade;					// 薄く暗く
 	int	_cgRetry;
-	int	_cgYes[_COLLOR_ALL_];
-	int	_cgNo[_COLLOR_ALL_];
+	int	_cgYes[_CG_OPTION_COLOR_NUM_];
+	int	_cgNo[_CG_OPTION_COLOR_NUM_];
 	// 音関連
-	int _seResult[2];
+	int _seResult[_SE_RESULT_NUM_];
 	// 項目
-	int menu_Yes;		// yes
-	int menu_No;		// no
-	int menu_Num;		// 総数
+	int _menuYes;		// yes
+	int _menuNo;		// no
+	int _menuNum;		// 総数
 	// フラグ・変数
-	int nowSelect;		// 選択中
+	int _nowSelect;		// 選択中
 	bool _isContinue;	// 選択肢
 	bool _isRetry;		// リトライフラグ
 	bool _isEnd;		// エンドフラグ

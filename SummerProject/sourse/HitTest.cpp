@@ -25,10 +25,10 @@ void SceneAction::InitRect()
 */
 void SceneAction::HitCheckPlayerWall(int old_x, int old_y) 
 {
-	int left = pl.x + pl.hit_x;
-	int up = pl.y + pl.hit_y;
-	int right = pl.hit_w - 1;
-	int down = pl.hit_h - 1;
+	int left	= pl.x + pl.hit_x;
+	int up		= pl.y + pl.hit_y;
+	int right	= pl.hit_w - 1;
+	int down	= pl.hit_h - 1;
 	if(_mapData->IsHitCharaMap(left, up, right, down, 1) == 1) 
 	{
 		pl.y = old_y;

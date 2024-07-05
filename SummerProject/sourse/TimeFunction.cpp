@@ -13,10 +13,10 @@
 */
 void SceneAction::InitStartPreprocessing() {
 	// スタートフラグ初期化
-	gameStart = 0;
-	operationDescription = 1;
-	startSignal = 0;
-	startCnt = -1;
+	gameStart				= 0;
+	operationDescription	= 1;
+	startSignal				= 0;
+	startCnt				= -1;
 }
 
 /*
@@ -80,13 +80,13 @@ void SceneAction::DrawStartPreprocessing() {
 */
 void SceneAction::InitLimitTime() {
 	// 制限時間をセット
-	gameLimitTime = 120000;	
+	gameLimitTime	= 120000;	
 	// ゲームスタート時間を初期化
-	gameStartTime = 0;
+	gameStartTime	= 0;
 	// ゲームの経過時間を初期化
 	gameElapsedTime = 0;
 	// 描画用の制限時間を初期化
-	drawLimitTime = 0;
+	drawLimitTime	= 0;
 }
 
 /*
@@ -96,7 +96,7 @@ void SceneAction::ProcessLimitTime() {
 	// ゲームがスタートしていたら時間を計測
 	if(gameStart == 1) {
 		// ポーズ画面を開いた時間を保存する変数に現在の時間を取得
-		oldTime = GetNowCount();
+		oldTime			= GetNowCount();
 		// ゲームの経過時間を計測
 		// 現在の時間 - ゲームスタート時間
 		gameElapsedTime = GetNowCount() - gameStartTime;
@@ -111,16 +111,16 @@ void SceneAction::ProcessLimitTime() {
 */
 void SceneAction::DrawLimitTime() {
 	// 現在の時間を秒に変換
-	int second = drawLimitTime / 1000;
+	int second		= drawLimitTime / 1000;
 	// 分に変換
-	int minutes = second / 60;
+	int minutes		= second / 60;
 	// 秒に変換(十の位)
-	int second_10 = second % 60 / 10;
+	int second_10	= second % 60 / 10;
 	// 秒に変換(一の位)
-	int second_1 = second % 60 - second_10 * 10;
+	int second_1	= second % 60 - second_10 * 10;
 	// ミリ秒を描画
-	int ms_10 = (drawLimitTime / 10) % 10;
-	int ms_100 = (drawLimitTime / 100) % 10;
+	int ms_10		= (drawLimitTime / 10) % 10;
+	int ms_100		= (drawLimitTime / 100) % 10;
 
 	// 時間を描画する位置
 	int time_x = 780;

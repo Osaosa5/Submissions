@@ -15,34 +15,34 @@
 	@brief	プレイヤーの初期化
 */
 void SceneAction::InitPlayer() {
-	pl.type = 0;
-	pl.x = 60;				
-	pl.y = 450;
-	pl.w = 239;
-	pl.h = 239;
-	pl.speed_x = 0;
-	pl.speed_y = 5;
-	pl.high = 0;
-	pl.gravity = 0;
-	pl.stand = 0;
-	pl.obstacle = 0;
-	pl.obstacleHit = 0;
-	pl.obstacleLimit = 1200;
-	pl.hit = 0;
-	pl.lane = AddPlayerLane(pl.y + pl.hit_y);
+	pl.type				= 0;
+	pl.x				= 60;				
+	pl.y				= 450;
+	pl.w				= 239;
+	pl.h				= 239;
+	pl.speed_x			= 0;
+	pl.speed_y			= 5;
+	pl.high				= 0;
+	pl.gravity			= 0;
+	pl.stand			= 0;
+	pl.obstacle			= 0;
+	pl.obstacleHit		= 0;
+	pl.obstacleLimit	= 1200;
+	pl.hit				= 0;
+	pl.lane				= AddPlayerLane(pl.y + pl.hit_y);
 
 	InitRect();
 	
-	playerMoveFlag = 1;
-	playerCnt = 0;
-	start = 0;
-	end = 0;
-	frames = 8;
+	playerMoveFlag	= 1;
+	playerCnt		= 0;
+	start			= 0;
+	end				= 0;
+	frames			= 8;
 
-	playerSlopeFlag = 1;
+	playerSlopeFlag	= 1;
 
-	invincibleTime = 0;
-	timeObstacle = 0;
+	invincibleTime	= 0;
+	timeObstacle	= 0;
 
 	// フラストレーションエフェクトのロード
 	// 点滅中(3秒)は表示
@@ -102,57 +102,51 @@ void SceneAction::ProcessPlayer() {
 	if(pl.stand == 1 && pl.obstacleHit == FALSE && playerMoveFlag == 1) {
 		// 1レーンでなければ上に移動できる
 		if(gTrg & PAD_INPUT_UP && pl.lane != 1) {
-			playerCnt = 0;
-			start = pl.y;
-			end = start - CHIP_H;
-			playerMoveFlag = 0;
+			playerCnt		= 0;
+			start			= pl.y;
+			end				= start - CHIP_H;
+			playerMoveFlag	= 0;
 		}
 		// 4レーンでなければ下に移動できる
 		if(gTrg & PAD_INPUT_DOWN && pl.lane != 4) { 
-			playerCnt = 0;
-			start = pl.y;
-			end = start + CHIP_H;
-			playerMoveFlag = 0;
+			playerCnt		= 0;
+			start			= pl.y;
+			end				= start + CHIP_H;
+			playerMoveFlag	= 0;
 		}
 	}
-	// プレイヤーが移動していなければ移動する
+
+	// プレイヤーのレーン移動
 	if(playerMoveFlag == 0) {
 		pl.y = EasingLinear(playerCnt, start, end, frames);
 	}
-	// 移動中なので行動を制限する
+	// 移動中なので、次のレーンに着くまで操作を制限する
 	if(playerCnt >= frames) {
 		playerMoveFlag = 1;
 	}
 	// プレイヤーの移動カウントを進める
 	playerCnt++;
 
-	// ジャンプ
-	// Bボタンでジャンプ
+	// AあるいはBボタンでジャンプ
 	if(gTrg & PAD_INPUT_4 && pl.stand == 1 && pl.obstacleHit == 0 && playerMoveFlag == 1)
 	{
 		if(shouldGotJet == 0) { pl.gravity = -17; }
 	}
-	// Aボタンでジャンプ
 	else if(gTrg & PAD_INPUT_3 && pl.stand == 1 && pl.obstacleHit == 0 && playerMoveFlag == 1)
 	{
 		if(shouldGotJet == 0) { pl.gravity = -17; }
 	}
+
 	// ジャンプ処理
-	// 下降スピードを加算
-	pl.gravity++;
-	// プレイヤーの高さを下げる
-	pl.high += pl.gravity;
-	// プレイヤーの着地フラグを0にする
-	pl.stand = 0;
-	// 床よりも下に行かないようにする
-	// プレイヤーの高さが0より大きい場合
+	pl.gravity++;				// 下降スピードを加算
+	pl.high		+= pl.gravity;	// プレイヤーの高さを下げる
+	pl.stand	= 0;			// プレイヤーの着地フラグを0にする
+
+	// プレイヤーが地面にいる場合、めり込まないようにする
 	if(pl.high > 0) {
-		// プレイヤーの高さを0にする
-		pl.high = 0;
-		// プレイヤーの下降スピードを0にする
-		pl.gravity = 0;
-		// プレイヤーの着地フラグを1にする
-		pl.stand = 1;
+		pl.high		= 0;	// プレイヤーの高さを0にする
+		pl.gravity	= 0;	// プレイヤーの下降スピードを0にする
+		pl.stand	= 1;	// プレイヤーの着地フラグを1にする
 	}
 }
 

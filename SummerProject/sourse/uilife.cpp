@@ -12,12 +12,12 @@
 */
 UILife::UILife() {
 	// 画像の読み込み
-	_cgHeart_loss = LoadGraph("res/UI/heart-black.png");
-	_cgHeart = LoadGraph("res/UI/heart.png");
-	_cgDie = LoadGraph("res/effect/about_to_die.png");
+	_cgHeart_loss	= LoadGraph("res/UI/heart-black.png");
+	_cgHeart		= LoadGraph("res/UI/heart.png");
+	_cgDie			= LoadGraph("res/effect/about_to_die.png");
 	// 初期化
-	_UIlife = 0;
-	_lifeCnt = 0;
+	_UIlife		= 0;
+	_lifeCnt	= 0;
 }
 
 /*
@@ -64,13 +64,12 @@ void	UILife::Draw() {
 	int base_x = 40, base_y = 25;
 
 	// ハートのサイズ
-	int heart_w = 84, heart_h = 70;
-	int heart_one = 1;		// ひとつのハートでlifeをいくつ表現するか
+	int heart_w		= 84, heart_h = 70;
+	int heart_one	= 1;		// ひとつのハートでlifeをいくつ表現するか
 
 	// lifeをハートで描画
 	int x, y, w;
-	x = 0; y = 0;
-	w = 80;			// ハートとハートのスキマ
+	x = 0; y = 0; w = 80;			// ハートとハートのスキマ
 	int life = _UIlife;
 	for (int i = 0; i < 320; i += w) {
 		// 黒いハートを描画

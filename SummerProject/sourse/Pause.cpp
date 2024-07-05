@@ -13,16 +13,16 @@
 */
 void SceneAction::InitPouse() {
 	// ‘I‘ğˆ‚ğ‰Šú‰»
-	menu_Yes = OPTION_YES;
-	menu_No = OPTION_NO;
+	menu_Yes	= OPTION_YES;
+	menu_No		= OPTION_NO;
 
 	// ‘I‘ğˆ‚Ì‘”
-	menu_Num = _OPTION_ALL_;
+	menu_Num	= _OPTION_ALL_;
 
 	// ‘I‘ğ’†
-	nowSelect = menu_Yes;
+	nowSelect	= menu_Yes;
 
-	oldTime = 0;
+	oldTime		= 0;
 }
 
 /*

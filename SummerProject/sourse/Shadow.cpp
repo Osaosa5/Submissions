@@ -12,8 +12,8 @@
 */
 Shadow::Shadow() {
 	// ‰æ‘œ“Ç‚İ‚İ
-	cgShadowPlayer = LoadGraph("res/UI/kage_240_120.png");
-	cgShadowItem = LoadGraph("res/UI/kage_120_120.png");
+	cgShadowPlayer	= LoadGraph("res/UI/kage_240_120.png");
+	cgShadowItem	= LoadGraph("res/UI/kage_120_120.png");
 }
 
 /*

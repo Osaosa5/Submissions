@@ -13,16 +13,16 @@
 uiMileStone::uiMileStone() { 
 	// 画像読み込み
 	_cgPlayerPosDisplay	= LoadGraph("res/UI/UI_Face.png");
-	_cgMileStone = LoadGraph("res/UI/location.png");
+	_cgMileStone		= LoadGraph("res/UI/location.png");
 	// 座標設定
-	_mileStone_x = 265;
-	_mileStone_y = 980;
+	_mileStone_x		= 265;
+	_mileStone_y		= 980;
 	_playerPosDisplay_x	= 0;
 	_playerPosDisplay_y	= _mileStone_y;
 	// 処理用変数初期化
-	_mapDistance = 0;
-	_ranRate = 0;
-	_uiMapDistance = 1264;
+	_mapDistance	= 0;
+	_ranRate		= 0;
+	_uiMapDistance	= 1264;
 }
 
 /*
@@ -42,9 +42,9 @@ uiMileStone::~uiMileStone() {
 */
 void uiMileStone::Process(int x, int start, int end) {
 	// コースの走行距離
-	_mapDistance = end - start;
+	_mapDistance		= end - start;
 	// プレイヤーの走った割合
-	_ranRate = x / _mapDistance;
+	_ranRate			= x / _mapDistance;
 	// プレイヤーの走った割合をUIに反映させる
 	_playerPosDisplay_x = _ranRate * _uiMapDistance + _mileStone_x;
 }

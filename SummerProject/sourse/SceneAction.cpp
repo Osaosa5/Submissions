@@ -113,17 +113,17 @@ SceneAction::SceneAction(int stageNumber) {
 	_UIlife.Set(_life);
 
 	// ゲームスタートフラグ
-	drawingFlag = 1;
+	drawingFlag	= 1;
 
 	// ゲームフラグ
 	// ゲームオーバーフラグ　体力が0になった時
-	gameFlag_Over = 0;
+	gameFlag_Over		= 0;
 	// ゲームオーバーフラグ　タイムオーバー
-	gameFlag_TimeOver= 0;
+	gameFlag_TimeOver	= 0;
 	// ゲームクリアフラグ
-	gameFlag_Clear = 0;
+	gameFlag_Clear		= 0;
 	// ポーズ画面フラグ
-	pause = 0;
+	pause				= 0;
 }
 
 /*

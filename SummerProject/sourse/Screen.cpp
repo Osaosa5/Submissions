@@ -28,11 +28,10 @@ void SceneAction::ProcessScreen()
 	gScrollY = pl.y - SCREEN_H / 8;
 
 	// スクロールをマップデータ外までやらないように制限
-	if (gScrollX < 0) { gScrollX = 0; }
-	if (gScrollX + SCREEN_W >= MAPSIZE_W * CHIP_W) { gScrollX = MAPSIZE_W * CHIP_W - SCREEN_W; }
-	if (gScrollY < 0) { gScrollY = 0; }
-	if (gScrollY + SCREEN_H >= MAPSIZE_H * CHIP_H) { gScrollY = MAPSIZE_H * CHIP_H - SCREEN_H; }
-
+	if (gScrollX < 0)								{ gScrollX = 0; }
+	if (gScrollX + SCREEN_W >= MAPSIZE_W * CHIP_W)	{ gScrollX = MAPSIZE_W * CHIP_W - SCREEN_W; }
+	if (gScrollY < 0)								{ gScrollY = 0; }
+	if (gScrollY + SCREEN_H >= MAPSIZE_H * CHIP_H)	{ gScrollY = MAPSIZE_H * CHIP_H - SCREEN_H; }
 }
 
 /*
