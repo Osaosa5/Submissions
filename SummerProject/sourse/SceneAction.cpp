@@ -247,90 +247,92 @@ void SceneAction::Process() {
 
 			ProcessScreen();	// スクリーンの処理
 		}
-		// ポーズの処理
-		ProcessPouse();
-		// フレームレートの処理
-		_fps->fps_wait();
+	}
 
-		{
-			// フェード処理の段階の取得
-			int step = _fade->GetStep();
-			switch (step) {
-			case 0: // フェードイン
-				_fade->ColorFadeIn(10);
+	// ポーズの処理
+	ProcessPouse();
+	// フレームレートの処理
+	_fps->fps_wait();
+
+	{
+		// フェード処理の段階の取得
+		int step = _fade->GetStep();
+		switch (step) {
+		case 0: // フェードイン
+			_fade->ColorFadeIn(10);
+			step++;
+			break;
+		case 1:	// フェードインが終了しているか
+			if (_fade->IsColorFade() == 0) {
+				// フェードイン終了
 				step++;
-				break;
-			case 1:	// フェードインが終了しているか
-				if (_fade->IsColorFade() == 0) {
-					// フェードイン終了
-					step++;
-				}
-				break;
-			case 2:
-				// ゲームオーバー
-				if (_UIlife.Get() == 0) {
-					gameFlag_Over = 1;
-				}
-				if (drawLimitTime < 0) {
-					gameFlag_TimeOver = 1;
-				}
+			}
+			break;
+		case 2:
+			// ゲームオーバー
+			if (_UIlife.Get() == 0) {
+				gameFlag_Over = 1;
+			}
+			if (drawLimitTime < 0) {
+				gameFlag_TimeOver = 1;
+			}
 
-				// ゲームクリア
-				if (_UIlife.Get() != 0 && pl.x >= DISTANCE_LIMIT) {
-					// クリアSE
-					PlaySoundMem(_se[SE_GOAL], DX_PLAYTYPE_BACK);
-					if (CheckSoundMem(_bgm[BGM_STAGE_ONE]) == 1) {
-						StopSoundMem(_bgm[BGM_STAGE_ONE]);
-					}
-					// ゴールムービー
-					if (gameFlag_Clear == 0) {
-						PlayMovie("res/staging/clear.mp4", 1, DX_MOVIEPLAYTYPE_NORMAL);
-						gameFlag_Clear = 1;
-						drawingFlag = 0;
-						WaitTimer(1000);
-					}
-					// ゲームフラグoff
-					gameStart = 0;
+			// ゲームクリア
+			if (_UIlife.Get() != 0 && pl.x >= DISTANCE_LIMIT) {
+				// クリアSE
+				PlaySoundMem(_se[SE_GOAL], DX_PLAYTYPE_BACK);
+				if (CheckSoundMem(_bgm[BGM_STAGE_ONE]) == 1) {
+					StopSoundMem(_bgm[BGM_STAGE_ONE]);
 				}
-				// 通常処理
-				// タイムオーバーに限りC.O
-				if (gameFlag_TimeOver == 1) {
+				// ゴールムービー
+				if (gameFlag_Clear == 0) {
+					PlayMovie("res/staging/clear.mp4", 1, DX_MOVIEPLAYTYPE_NORMAL);
+					gameFlag_Clear = 1;
+					drawingFlag = 0;
+					WaitTimer(1000);
+				}
+				// ゲームフラグoff
+				gameStart = 0;
+			}
+			// 通常処理
+			// タイムオーバーに限りC.O
+			if (gameFlag_TimeOver == 1) {
+				SceneBase* scene = new SceneGameOver();
+				ChangeScene(scene);
+			}
+			if (gameFlag_Over == 1) {
+				// フェードアウト開始
+				_fade->ColorFadeOut(0, 0, 0, 60);
+				step++;
+			}
+			if (gameFlag_Clear == 1) {
+				step++;
+			}
+			break;
+		case 3:
+			if (_fade->IsColorFade() != 1) {
+				// step初期化
+				step = 0;
+				// フェードアウト終了
+				// ゲームオーバー
+				if (gameFlag_Over == 1) {
+					// ゲームオーバー画面へ
 					SceneBase* scene = new SceneGameOver();
 					ChangeScene(scene);
 				}
-				if (gameFlag_Over == 1) {
-					// フェードアウト開始
-					_fade->ColorFadeOut(0, 0, 0, 60);
-					step++;
-				}
+				// ゲームクリア
 				if (gameFlag_Clear == 1) {
-					step++;
+					// ゲームクリア画面へ
+					SceneBase* scene = new SceneGameResult(drawLimitTime);
+					ChangeScene(scene);
 				}
-				break;
-			case 3:
-				if (_fade->IsColorFade() != 1) {
-					// step初期化
-					step = 0;
-					// フェードアウト終了
-					// ゲームオーバー
-					if (gameFlag_Over == 1) {
-						// ゲームオーバー画面へ
-						SceneBase* scene = new SceneGameOver();
-						ChangeScene(scene);
-					}
-					// ゲームクリア
-					if (gameFlag_Clear == 1) {
-						// ゲームクリア画面へ
-						SceneBase* scene = new SceneGameResult(drawLimitTime);
-						ChangeScene(scene);
-					}
-				}
-				break;
 			}
-			// 現在のフェード処理の段階のセット
-			_fade->SetStep(step);
+			break;
 		}
+		// 現在のフェード処理の段階のセット
+		_fade->SetStep(step);
 	}
+	
 }
 
 /*
